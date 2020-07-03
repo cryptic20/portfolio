@@ -1,27 +1,37 @@
 import React from 'react'
-import logo from '../images/logo.svg'
-import './App.css'
+import Container from '@material-ui/core/Container'
+import { ThemeProvider , createMuiTheme } from '@material-ui/core/styles';
+import Switch from '@material-ui/core/Switch'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 function App () {
+  const [checked, setChecked] = React.useState(false);
+  const toggleChecked = () => {
+    setChecked((prev) => !prev
+    );
+
+  };
+  const prefersDarkMode = checked;
+    const theme = React.useMemo(
+      () =>
+        createMuiTheme({
+          palette: {
+            type: prefersDarkMode ? 'dark' : 'light',
+          },
+        }),
+      [prefersDarkMode],
+    );
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          <code>src/App.js</code>
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Container>
+   <ThemeProvider  theme={theme}>
+      <CssBaseline/>
+      </ThemeProvider>
+            <FormControlLabel
+            control={<Switch checked={checked} onChange={toggleChecked} />}
+             label="dark"
+           />
+   </Container>
   )
 }
 
