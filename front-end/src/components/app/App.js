@@ -7,21 +7,24 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import NavBar from '../nav/NavBar'
 
 function App () {
-  const [checked, setChecked] = React.useState(false);
-  const toggleChecked = () => {
-    setChecked((prev) => !prev
-    );
 
-  };
-  const prefersDarkMode = checked;
+  const isDark = localStorage.getItem("darkMode");
+  const [darkMode, setDarkMode] = React.useState(JSON.parse(isDark));
+
+ const toggleMode = () => {
+   setDarkMode(!darkMode)
+   localStorage.setItem("darkMode", !darkMode)
+
+ }
+
     const theme = React.useMemo(
       () =>
         createMuiTheme({
           palette: {
-            type: prefersDarkMode ? 'dark' : 'light',
+            type: darkMode ? 'dark' : 'light',
           },
         }),
-      [prefersDarkMode],
+      [darkMode],
     );
   return (
    <Container>
@@ -30,7 +33,7 @@ function App () {
       </ThemeProvider>
         <NavBar />
             <FormControlLabel
-            control={<Switch checked={checked} onChange={toggleChecked} />}
+            control={<Switch checked={darkMode} onChange={toggleMode} />}
              label="dark"
            />
    </Container>
