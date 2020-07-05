@@ -2,7 +2,9 @@ import React from 'react'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Switch from '@material-ui/core/Switch'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import Grid from '@material-ui/core/Grid'
 import NavBar from '../nav/NavBar'
+import About from '../pages/About'
 
 function App () {
   const isDark = localStorage.getItem('darkMode')
@@ -27,7 +29,6 @@ function App () {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <NavBar />
-        <Switch checked={darkMode} onChange={toggleMode} />
       </ThemeProvider>
     </React.Fragment>
   )

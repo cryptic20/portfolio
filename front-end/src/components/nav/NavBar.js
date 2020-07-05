@@ -13,7 +13,15 @@ import CloseIcon from '@material-ui/icons/Close'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
-const drawerWidth = 240
+import GitHubIcon from '@material-ui/icons/GitHub'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import MailOutlineIcon from '@material-ui/icons/MailOutline'
+import Tooltip from '@material-ui/core/Tooltip'
+
+import Link from '@material-ui/core/Link'
+import About from '../pages/About'
+
+const drawerWidth = 180
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex'
@@ -23,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
       width: drawerWidth,
       flexShrink: 0
     }
+  },
+  toolbarButtons: {
+    marginLeft: 'auto'
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1
@@ -47,13 +58,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 function ResponsiveDrawer () {
-  const dummyCategories = [
-    'Hokusai',
-    'Hiroshige',
-    'Utamaro',
-    'Kuniyoshi',
-    'Yoshitoshi'
-  ]
+  const dummyCategories = ['About', 'Projects', 'Hobbies', 'Contact']
   const classes = useStyles()
   const theme = useTheme()
   const [mobileOpen, setMobileOpen] = React.useState(false)
@@ -74,7 +79,7 @@ function ResponsiveDrawer () {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar} color="default">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -86,8 +91,39 @@ function ResponsiveDrawer () {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Responsive drawer
+            Sherwin Wyco
           </Typography>
+          <div className={classes.toolbarButtons}>
+            <IconButton>
+              <Link
+                href="https://www.github.com/cryptic20"
+                target="_blank"
+                color="inherit"
+              >
+                <Tooltip title="GitHub Profile" aria-label="GitHub Profile">
+                  <GitHubIcon />
+                </Tooltip>
+              </Link>
+            </IconButton>
+            <IconButton>
+              <Link href="" target="_blank" color="inherit">
+                <Tooltip title="LinkedIn Profile" aria-label="LinkedIn Profile">
+                  <LinkedInIcon />
+                </Tooltip>
+              </Link>
+            </IconButton>
+            <IconButton>
+              <Link
+                href="mailto:sherwin.wyco@gmail.com"
+                target="_blank"
+                color="inherit"
+              >
+                <Tooltip title="send mail" aria-label="send mail">
+                  <MailOutlineIcon />
+                </Tooltip>
+              </Link>
+            </IconButton>
+          </div>
         </Toolbar>
       </AppBar>
 
@@ -130,6 +166,7 @@ function ResponsiveDrawer () {
       </nav>
       <div className={classes.content}>
         <div className={classes.toolbar} />
+        <About />
       </div>
     </div>
   )
