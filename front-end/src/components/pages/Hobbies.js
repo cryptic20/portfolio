@@ -1,9 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Hobbies extends Component {
-  render () {
-    return <div>My Hobbies</div>
-  }
+function Hobbies () {
+  return <div>My hobbies! </div>
 }
-
 export default Hobbies
