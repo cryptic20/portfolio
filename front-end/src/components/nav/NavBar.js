@@ -13,12 +13,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import MailOutlineIcon from '@material-ui/icons/MailOutline'
-import Tooltip from '@material-ui/core/Tooltip'
-
-import Link from '@material-ui/core/Link'
+import ProfileLinks from '../profileLinks/ProfileLinks'
 import About from '../pages/About'
 
 const drawerWidth = 180
@@ -94,35 +89,7 @@ function ResponsiveDrawer () {
             Sherwin Wyco
           </Typography>
           <div className={classes.toolbarButtons}>
-            <IconButton>
-              <Link
-                href="https://www.github.com/cryptic20"
-                target="_blank"
-                color="inherit"
-              >
-                <Tooltip title="GitHub Profile" aria-label="GitHub Profile">
-                  <GitHubIcon />
-                </Tooltip>
-              </Link>
-            </IconButton>
-            <IconButton>
-              <Link href="" target="_blank" color="inherit">
-                <Tooltip title="LinkedIn Profile" aria-label="LinkedIn Profile">
-                  <LinkedInIcon />
-                </Tooltip>
-              </Link>
-            </IconButton>
-            <IconButton>
-              <Link
-                href="mailto:sherwin.wyco@gmail.com"
-                target="_blank"
-                color="inherit"
-              >
-                <Tooltip title="send mail" aria-label="send mail">
-                  <MailOutlineIcon />
-                </Tooltip>
-              </Link>
-            </IconButton>
+            <ProfileLinks />
           </div>
         </Toolbar>
       </AppBar>
