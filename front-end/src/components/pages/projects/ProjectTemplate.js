@@ -45,9 +45,14 @@ export default function MediaCard (props) {
         </Link>
       </CardActionArea>
       <CardContent>
-        <Typography gutterBottom variant="h5" display="block">
+        <Typography noWrap gutterBottom variant="h5" display="block">
           {props.name}
-          <Typography variant="caption" display="block" color="textSecondary">
+          <Typography
+            noWrap
+            variant="caption"
+            display="block"
+            color="textSecondary"
+          >
             created: {convertDate(props.createDate)}
           </Typography>
         </Typography>
@@ -58,7 +63,7 @@ export default function MediaCard (props) {
       <CardActionArea>
         <CardActions>
           <Link component={Button} href={props.url} target="_blank">
-            View on GitHub
+            GitHub
           </Link>
         </CardActions>
       </CardActionArea>

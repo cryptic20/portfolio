@@ -20,16 +20,6 @@ const useStyles = makeStyles((theme) => ({
 
 const test = [
   {
-    id: 'MDEwOlJlcG9zaXRvcnkyNzY1NTU0MjQ=',
-    name: 'portfolio',
-    description: 'My portfolio website.',
-    url: 'https://github.com/cryptic20/portfolio',
-    createdAt: '2020-07-02T05:19:14Z',
-    openGraphImageUrl:
-      'https://avatars3.githubusercontent.com/u/18493884?s=400&v=4',
-    updatedAt: '2020-07-05T14:30:46Z'
-  },
-  {
     id: 'MDEwOlJlcG9zaXRvcnkyNzI0MjQ5MDU=',
     name: 'system-design-primer',
     description:
@@ -194,6 +184,17 @@ const test = [
     updatedAt: '2018-05-11T20:23:49Z'
   },
   {
+    id: 'MDEwOlJlcG9zaXRvcnkxMzEzNTc2Njg=',
+    name: 'NYCProject',
+    description:
+      'Using NYC OPEN DATA and IBM WATSON to create a seamless search for job centers, shelters, financial assistance, and etc.',
+    url: 'https://github.com/katherinesdd53/NYCProject',
+    createdAt: '2018-04-28T00:53:14Z',
+    openGraphImageUrl:
+      'https://avatars2.githubusercontent.com/u/13991156?s=400&v=4',
+    updatedAt: '2018-04-29T18:37:59Z'
+  },
+  {
     id: 'MDEwOlJlcG9zaXRvcnkxMjk0NTY3NzM=',
     name: 'react-with-electron',
     description: null,
@@ -235,6 +236,16 @@ const test = [
     updatedAt: '2017-11-15T19:25:19Z'
   },
   {
+    id: 'MDEwOlJlcG9zaXRvcnkxMTAzMTAyNjg=',
+    name: 'hackathon2017',
+    description: 'NSBE-SHEP Hackathon 2017',
+    url: 'https://github.com/fgarcia-student/hackathon2017',
+    createdAt: '2017-11-11T02:03:20Z',
+    openGraphImageUrl:
+      'https://avatars1.githubusercontent.com/u/4333577?s=400&v=4',
+    updatedAt: '2017-11-11T10:57:25Z'
+  },
+  {
     id: 'MDEwOlJlcG9zaXRvcnk5NDgxNDg0Ng==',
     name: 'api-heroku',
     description: 'blog api for heroku',
@@ -273,6 +284,16 @@ const test = [
     openGraphImageUrl:
       'https://avatars3.githubusercontent.com/u/18493884?s=400&v=4',
     updatedAt: '2018-04-09T00:08:56Z'
+  },
+  {
+    id: 'MDEwOlJlcG9zaXRvcnk5MzA4Nzg4MA==',
+    name: 'Day-3-Collab',
+    description: 'Collaborative Work',
+    url: 'https://github.com/shajeecuevas/Day-3-Collab',
+    createdAt: '2017-06-01T18:33:01Z',
+    openGraphImageUrl:
+      'https://avatars2.githubusercontent.com/u/24379992?s=400&v=4',
+    updatedAt: '2017-06-02T16:48:11Z'
   },
   {
     id: 'MDEwOlJlcG9zaXRvcnk4NzgzMjA5Ng==',
