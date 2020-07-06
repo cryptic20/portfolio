@@ -20,7 +20,7 @@ function Footer () {
   const classes = useStyles()
   return (
     <AppBar position="fixed" className={classes.appBar} color="default">
-      <Typography variant="subtitle" className={classes.footer}>
+      <Typography variant="subtitle1" className={classes.footer}>
         © Copyright 2020
       </Typography>
     </AppBar>

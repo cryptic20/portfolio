@@ -17,7 +17,7 @@ import ProfileLinks from '../profileLinks/ProfileLinks'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Home from '../pages/Home'
 import About from '../pages/About'
-import Projects from '../pages/Projects'
+import Projects from '../pages/projects/Projects'
 import Hobbies from '../pages/Hobbies'
 
 const drawerWidth = 180
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-function ResponsiveDrawer () {
+function NavBar () {
   const categories = {
     Home: '/',
     About: '/about',
@@ -75,7 +75,7 @@ function ResponsiveDrawer () {
     <div>
       <List>
         {Object.keys(categories).map((key) => (
-          <ListItem button component={Link} to={categories[key]}>
+          <ListItem key={key} button component={Link} to={categories[key]}>
             <ListItemText primary={key} />
           </ListItem>
         ))}
@@ -165,9 +165,9 @@ function ResponsiveDrawer () {
     </Router>
   )
 }
-ResponsiveDrawer.propTypes = {
+NavBar.propTypes = {
   // Injected by the documentation to work in an iframe.
   // You won't need it on your project.
   container: PropTypes.object
 }
-export default ResponsiveDrawer
+export default NavBar
