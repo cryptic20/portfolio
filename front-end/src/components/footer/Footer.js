@@ -3,8 +3,6 @@ import AppBar from '@material-ui/core/AppBar'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 
-const drawerWidth = 180
-
 const useStyles = makeStyles((theme) => ({
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
