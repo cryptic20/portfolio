@@ -4,13 +4,23 @@ import './index.css'
 import App from './components/app/App'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import rootReducer from './reducer/rootReducer'
+import allReducers from './reducer/'
+import { loadState, saveState } from './reducer/localStorage'
 import * as serviceWorker from './serviceWorker'
 
+const persistedState = loadState()
+
 const store = createStore(
-  rootReducer,
+  allReducers,
+  persistedState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
+
+store.subscribe(() => {
+  saveState({
+    darkMode: store.getState().darkMode
+  })
+})
 
 ReactDOM.render(
   <React.StrictMode>

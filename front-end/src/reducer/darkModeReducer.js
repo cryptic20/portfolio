@@ -1,12 +1,9 @@
-import * as actions from '../actions'
-
-const preferences = (state = { darkThemeEnabled: false }, action) => {
+const darkModeReducer = (state = false, action) => {
   switch (action.type) {
-    case actions.TOGGLE_DARKTHEME:
-      return { ...state, darkThemeEnabled: !state.darkThemeEnabled }
-
+    case 'TOGGLE_DARKTHEME':
+      return !state
     default:
       return state
   }
 }
-export default preferences
+export default darkModeReducer
