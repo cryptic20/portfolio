@@ -18,8 +18,7 @@ import Home from '../pages/Home'
 import About from '../pages/About'
 import Projects from '../pages/projects/Projects'
 import Hobbies from '../pages/Hobbies'
-import DarkModeSwitch from '..//app/DarkModeSwitch'
-
+import DarkModeSwitch from '../app/DarkModeSwitch'
 const drawerWidth = 180
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -79,8 +78,8 @@ function NavBar () {
             <ListItemText primary={key} />
           </ListItem>
         ))}
-        <DarkModeSwitch />
       </List>
+      <DarkModeSwitch />
     </div>
   )
   return (

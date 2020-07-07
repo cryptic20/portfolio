@@ -5,14 +5,12 @@ import Typography from '@material-ui/core/Typography'
 function About () {
   return (
     <React.Fragment>
-      <Typography variant="h4" inline>
-        Hello!
-      </Typography>
-      <Typography inline>
+      <Typography variant="h3">Hello!</Typography>
+      <Typography variant="body1">
         I am a software developer mainly working in a full-stack role. Currently
         living in NYC. Likes eating ramen and fried chicken. Plays the guitar at
         night when everyone is asleep. Avid fps/moba gamer. Occasionally stream
-        games on{' '}
+        games on
         <Link
           href="https://twitch.tv/scher_w"
           target="_blank"
