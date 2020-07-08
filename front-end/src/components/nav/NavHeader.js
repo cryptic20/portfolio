@@ -33,10 +33,10 @@ function NavHeader () {
       <Grid container direction="column" alignItems="center">
         <Avatar alt="Sherwin Wyco" className={classes.large} />
         <div style={{ paddingBottom: 16 }} />
-        <Typography variant={'h6'} noWrap>
+        <Typography variant="h6" noWrap>
           Sherwin Wyco
         </Typography>
-        <Typography color={'textSecondary'} noWrap gutterBottom>
+        <Typography variant="subtitle1" noWrap gutterBottom>
           sherwin.wyco@gmail.com
         </Typography>
       </Grid>

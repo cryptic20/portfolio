@@ -18,7 +18,7 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import NavHeader from './NavHeader'
 import NavList from './NavList'
-
+import ExternalLinks from '../profileLinks/ExternalLinks'
 const drawerWidth = 240
 
 const useStyles = makeStyles((theme) => ({
@@ -45,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
+  toolbarButton: {
+    marginLeft: 'auto'
+  },
   drawerPaper: {
     width: drawerWidth
   },
@@ -92,6 +95,8 @@ function ResponsiveDrawer (props) {
           <Typography variant="h6" noWrap>
             Responsive drawer
           </Typography>
+          <div className={classes.toolbarButton} />
+          <ExternalLinks />
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">

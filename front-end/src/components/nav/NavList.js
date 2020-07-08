@@ -3,7 +3,6 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import Icon from '@material-ui/core/Icon'
-import MailIcon from '@material-ui/icons/core/Mail'
 
 const list = [
   {
@@ -40,7 +39,6 @@ function NavList () {
             primary={primaryText}
             primaryTypographyProps={{ noWrap: true }}
           />
-          <MailIcon />
         </ListItem>
       ))}
     </div>
