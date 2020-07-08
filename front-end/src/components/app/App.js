@@ -6,6 +6,7 @@ import {
   responsiveFontSizes
 } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import { BrowserRouter as Router } from 'react-router-dom'
 import NavBar from '../nav/NavBar'
 import Footer from '../footer/Footer'
 
@@ -26,8 +27,10 @@ function App () {
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <NavBar />
-        <Footer />
+        <Router>
+          <NavBar />
+          <Footer />
+        </Router>
       </ThemeProvider>
     </React.Fragment>
   )

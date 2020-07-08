@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setCurrentPage } from '../../reducer/actions'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import Icon from '@material-ui/core/Icon'
-import Home from '../pages/Home'
 const list = [
   {
     primaryText: 'Home',
@@ -45,7 +44,7 @@ function NavList () {
   }
 
   return (
-    <Router>
+    <React.Fragment>
       {list.map(({ primaryText, icon, path }, i) => (
         <ListItem
           key={i}
@@ -64,7 +63,7 @@ function NavList () {
           />
         </ListItem>
       ))}
-    </Router>
+    </React.Fragment>
   )
 }
 export default NavList

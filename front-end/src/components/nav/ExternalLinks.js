@@ -4,7 +4,6 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import EmailIcon from '@material-ui/icons/Email'
 import Tooltip from '@material-ui/core/Tooltip'
 import IconButton from '@material-ui/core/IconButton'
-import Link from '@material-ui/core/Link'
 import DarkModeSwitch from './DarkModeSwitch'
 import Grid from '@material-ui/core/Grid'
 
