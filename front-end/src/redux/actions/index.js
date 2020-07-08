@@ -7,3 +7,8 @@ export const setCurrentPage = (page) => ({
   type: 'SET_CURRENTPAGE',
   page
 })
+
+export const setSelectedButton = (button) => ({
+  type: 'SET_SELECTEDBUTTON',
+  button
+})

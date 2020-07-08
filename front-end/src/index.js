@@ -4,8 +4,8 @@ import './index.css'
 import App from './components/app/App'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import allReducers from './reducer/'
-import { loadState, saveState } from './reducer/localStorage'
+import allReducers from './redux/reducers/'
+import { loadState, saveState } from './redux/localStorage'
 import * as serviceWorker from './serviceWorker'
 
 const persistedState = loadState()

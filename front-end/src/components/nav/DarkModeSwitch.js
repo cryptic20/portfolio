@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { toggleDarkTheme } from '../../reducer/actions'
+import { toggleDarkTheme } from '../../redux/actions'
 import WbSunnyIcon from '@material-ui/icons/WbSunny'
 import NightsStayIcon from '@material-ui/icons/NightsStay'
 import Tooltip from '@material-ui/core/Tooltip'

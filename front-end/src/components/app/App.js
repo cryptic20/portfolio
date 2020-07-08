@@ -8,7 +8,6 @@ import {
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { BrowserRouter as Router } from 'react-router-dom'
 import NavBar from '../nav/NavBar'
-import Footer from '../footer/Footer'
 
 function App () {
   const darkMode = useSelector((state) => state.darkMode)
@@ -29,7 +28,6 @@ function App () {
         <CssBaseline />
         <Router>
           <NavBar />
-          <Footer />
         </Router>
       </ThemeProvider>
     </React.Fragment>

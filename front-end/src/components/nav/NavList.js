@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { setCurrentPage } from '../../reducer/actions'
+import { setCurrentPage } from '../../redux/actions'
 import { Link } from 'react-router-dom'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
