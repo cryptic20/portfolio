@@ -29,7 +29,7 @@ const list = [
 
 function NavList () {
   return (
-    <div>
+    <React.Fragment>
       {list.map(({ primaryText, icon }, i) => (
         <ListItem key={primaryText} button>
           <ListItemIcon>
@@ -41,7 +41,7 @@ function NavList () {
           />
         </ListItem>
       ))}
-    </div>
+    </React.Fragment>
   )
 }
 export default NavList

@@ -13,6 +13,9 @@ function App () {
   const darkMode = useSelector((state) => state.darkMode)
 
   let theme = createMuiTheme({
+    root: {
+      display: 'flex'
+    },
     palette: {
       type: darkMode ? 'dark' : 'light'
     }
