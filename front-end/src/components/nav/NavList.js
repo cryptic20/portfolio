@@ -1,37 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setCurrentPage } from '../../reducer/actions'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import Icon from '@material-ui/core/Icon'
-
+import Home from '../pages/Home'
 const list = [
   {
     primaryText: 'Home',
-    icon: 'home'
+    icon: 'home',
+    path: '/'
   },
   {
     primaryText: 'Projects',
-    icon: 'folder'
+    icon: 'folder',
+    path: '/projects'
   },
   {
     primaryText: 'Hobbies',
-    icon: 'games'
+    icon: 'games',
+    path: '/hobbies'
   },
   {
     primaryText: 'About',
-    icon: 'info'
+    icon: 'info',
+    path: '/about'
   },
   {
     primaryText: 'Contact',
-    icon: 'contact_phone'
+    icon: 'contact_phone',
+    path: '/contact'
   }
 ]
 
 function NavList () {
+  const [selected, setSelected] = useState('Home')
+  const dispatch = useDispatch()
+
+  const selectAndDispatch = (text) => {
+    dispatch(setCurrentPage(text))
+    setSelected(text)
+  }
+
   return (
-    <React.Fragment>
-      {list.map(({ primaryText, icon }, i) => (
-        <ListItem key={primaryText} button>
+    <Router>
+      {list.map(({ primaryText, icon, path }, i) => (
+        <ListItem
+          key={i}
+          button
+          component={Link}
+          to={path}
+          selected={primaryText === selected}
+          onClick={() => selectAndDispatch(primaryText)}
+        >
           <ListItemIcon>
             <Icon>{icon}</Icon>
           </ListItemIcon>
@@ -41,7 +64,7 @@ function NavList () {
           />
         </ListItem>
       ))}
-    </React.Fragment>
+    </Router>
   )
 }
 export default NavList
