@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { setCurrentPage } from '../../redux/actions'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
 
 function About () {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    // Update the appbar's title
+    dispatch(setCurrentPage('About'))
+  })
+
   return (
     <React.Fragment>
       <Typography variant="h3">Hello!</Typography>

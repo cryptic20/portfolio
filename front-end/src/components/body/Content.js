@@ -1,32 +1,13 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { Home, Projects, Hobbies, About } from '../pages'
 import Footer from '../footer/Footer'
 import Divider from '@material-ui/core/Divider'
-const routes = [
-  {
-    path: '/',
-    exact: true,
-    component: Home
-  },
-  {
-    path: '/projects',
-    exact: false,
-    component: Projects
-  },
-  {
-    path: '/hobbies',
-    exact: false,
-    component: Hobbies
-  },
-  {
-    path: '/about',
-    exact: false,
-    component: About
-  }
-]
+import { useDispatch } from 'react-redux'
+import { setCurrentPage } from '../../redux/actions'
+import { routes } from '../nav/RouteList'
 
 function Content () {
+  const dispatch = useDispatch()
   return (
     <React.Fragment>
       <Switch>

@@ -1,2 +1,2 @@
-Creating my personal website on Docker + React/Redux + Material-UI and Apollo for fetching data on graphql.
+Creating my personal website on Docker + React/Redux + Material-UI and Apollo graphql.
 ### under construction
