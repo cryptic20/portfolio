@@ -11,8 +11,7 @@ import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
-    minWidth: 200
+    maxWidth: 345
   },
   media: {
     height: 140
