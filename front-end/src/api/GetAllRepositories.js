@@ -4,10 +4,9 @@ export const GET_REPOSITORY = gql`
   {
     viewer {
       repositories(
+        first: 10
         affiliations: OWNER
-        first: 100
         orderBy: { field: CREATED_AT, direction: DESC }
-        privacy: PUBLIC
       ) {
         nodes {
           id
@@ -17,6 +16,12 @@ export const GET_REPOSITORY = gql`
           createdAt
           openGraphImageUrl
           updatedAt
+        }
+        pageInfo {
+          startCursor
+          endCursor
+          hasNextPage
+          hasPreviousPage
         }
       }
     }

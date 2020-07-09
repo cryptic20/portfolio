@@ -12,7 +12,7 @@ COPY package*.json ./
 RUN npm install
 
 # add app
-COPY . .
+COPY . ./
 
 # start app
 CMD ["npm", "start"]
