@@ -5,7 +5,7 @@ import ProjectTemplate from './ProjectTemplate'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { useQuery } from '@apollo/react-hooks'
 import { useDispatch } from 'react-redux'
-import { setCurrentPage } from '../../../redux/actions'
+import { setCurrentPage, setSelectedButton } from '../../../redux/actions'
 import { GET_REPOSITORY } from '../../../api'
 
 function Projects () {
@@ -14,6 +14,7 @@ function Projects () {
   useEffect(() => {
     // Update the appbar's title
     dispatch(setCurrentPage('Projects'))
+    dispatch(setSelectedButton('Projects'))
   })
 
   const { loading, error, data, fetchMore } = useQuery(GET_REPOSITORY, {

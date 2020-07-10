@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { setCurrentPage } from '../../redux/actions'
+import { setCurrentPage, setSelectedButton } from '../../redux/actions'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
 
@@ -10,6 +10,7 @@ function About () {
   useEffect(() => {
     // Update the appbar's title
     dispatch(setCurrentPage('About'))
+    dispatch(setSelectedButton('About'))
   })
 
   return (
