@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import CardTemplate from './CardTemplate';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Typography from '@material-ui/core/Typography';
 
 class Repositories extends Component {
   componentDidMount() {
@@ -28,11 +30,12 @@ class Repositories extends Component {
   };
 
   render() {
-    if (!this.props.entries && this.props.loading) return <p>Loading....</p>;
-    const repo = this.props.entries || [];
+    if (!this.props.entries && this.props.loading)
+      return <CircularProgress color="inherit" />;
+    const repo = this.props.entries.repositories.nodes || [];
     return (
       <React.Fragment>
-        {repo.nodes.map((node, index) => (
+        {repo.map((node, index) => (
           <Grid key={index} item xs={12} sm={6} md={4} lg={3} align="center">
             <CardTemplate
               key={index}
@@ -44,7 +47,9 @@ class Repositories extends Component {
             />
           </Grid>
         ))}
-        {this.props.loading && <h2>Loading...</h2>}
+        <Grid item xs={12} align="center">
+          {this.props.loading && <Typography>LOADING...</Typography>}
+        </Grid>
       </React.Fragment>
     );
   }
