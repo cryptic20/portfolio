@@ -1,1 +1,3 @@
-const STEAM_ENDPOINT = `http://api.steampowered.com/${interface}/${method_name}/v${version}/?key=${key}&format=${format}`;
+export const getSteamEndpoint = (interfaceName, methodName, version) => {
+  return `https://cors-anywhere.herokuapp.com/http://api.steampowered.com/${interfaceName}/${methodName}/v${version}/?key=${process.env.REACT_APP_GITHUB_KEY}&format=json`
+}
