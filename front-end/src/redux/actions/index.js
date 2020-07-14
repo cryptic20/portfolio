@@ -12,3 +12,17 @@ export const setSelectedButton = (button) => ({
   type: 'SET_SELECTEDBUTTON',
   button
 })
+
+export const fetching = () => ({
+  type: 'FETCHING'
+})
+
+export const fetched = (data) => ({
+  type: 'FETCHED',
+  data
+})
+
+export const fetchError = (error) => ({
+  type: 'FETCHED_ERROR',
+  error
+})

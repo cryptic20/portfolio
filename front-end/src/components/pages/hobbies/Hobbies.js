@@ -1,20 +1,28 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { setCurrentPage, setSelectedButton } from '../../../redux/actions'
-import { getSteamEndpoint } from '../../../api'
+import React, { useEffect, useState, useRef } from 'react'
+import Button from '@material-ui/core/Button'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  setCurrentPage,
+  setSelectedButton,
+  fetching,
+  fetched,
+  fetchError
+} from '../../../redux/actions'
+import { getSteamEndpoint, useFetch } from '../../../api'
+
 function Hobbies () {
   const dispatch = useDispatch()
-
+  // const cache = useSelector((state) => state.cacheData)
+  // // Update the appbar's title
   useEffect(() => {
-    // Update the appbar's title
     dispatch(setCurrentPage('Hobbies'))
     dispatch(setSelectedButton('Hobbies'))
-    fetch(getSteamEndpoint())
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err))
   })
 
-  return <div> My hobbies </div>
+  const url = getSteamEndpoint('ISteamUser', 'GetPlayerSummaries', '0002')
+  const { loading, data, error } = useFetch(url)
+  if (loading) return <div>loading...</div>
+  if (error) return <div>{error}</div>
+  return <div>data</div>
 }
 export default Hobbies

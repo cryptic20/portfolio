@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     maxWidth: 345
   },
   media: {
-    height: 140
+    height: 130
   }
 })
 
@@ -55,13 +55,11 @@ export default function MediaCard (props) {
           {props.description === null ? 'No description' : props.description}
         </Typography>
       </CardContent>
-      <CardActionArea>
-        <CardActions>
-          <Link component={Button} href={props.url} target="_blank">
-            GitHub
-          </Link>
-        </CardActions>
-      </CardActionArea>
+      <CardActions>
+        <Button href={props.url} target="_blank">
+          GitHub
+        </Button>
+      </CardActions>
     </Card>
   )
 }
