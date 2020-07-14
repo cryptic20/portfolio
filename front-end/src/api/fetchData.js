@@ -1,4 +1,4 @@
-import { useEffect, useRef, useReducer } from 'react'
+import { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetching, fetched, fetchError } from '../redux/actions'
 
@@ -6,6 +6,7 @@ export const useFetch = (url) => {
   const cache = useRef({})
   const dispatch = useDispatch()
   const state = useSelector((state) => state.fetchedData)
+
   useEffect(() => {
     let cancelRequest = false
     if (!url) return
@@ -28,7 +29,6 @@ export const useFetch = (url) => {
         }
       }
     }
-
     fetchData()
 
     return function cleanup () {
